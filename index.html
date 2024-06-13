@@ -7,6 +7,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="index.css">
+        <title>Password Generator</title>
     </head>
     <body>
         <div id = "box">
@@ -16,9 +17,17 @@
                     <h1 class = "title-1">Generate a</h1>
                     <h1 class = "title-2">random password</h1>
                 </div>
-                <button>Generate passwords</button>
+                <button id = "generate-password-button">
+                    <img src="./unlock.png" alt="unlock icon" id="lock-icon">
+                    Generate passwords
+                </button>
             </div>
-            <script src="index.pack.js"></script>
+            <div id = "password-content">
+                <hr class="solid">
+                <ul id="passwords">
+                </ul>
+            </div>
+            <script src="index.js"></script>
         </div>
     </body>
 </html>
