@@ -1,184 +1,146 @@
-body{
+body {
     margin: 0;
     padding: 0;
-    min-width: 675px; 
+    min-width: 400px;
+    min-height: 600px;
 }
 
-button{
-    font-family: "Baloo 2", Arial, Helvetica, sans-serif;
-    padding-right: 1px;
-    height: 64px;
-    width: 275px;
-    display: flex;
+#box {
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #2C3B4F;
+    border-radius: 1px;
+    background-color: #1F2938;
     align-items: center;
-    justify-content: center;
-    gap: 10px;
-    background-color: #FBBF24;
-    border: none;
-    border-radius: 10px;
-    /* cursor: pointer; */
-    color: #F0FFFF;
-    font-size: 20px;
-    margin-bottom: 30px;
+    max-width: 400px;
 }
 
-button:hover{
-    cursor: pointer;
-    background-color: #E8A920;
-}
-
-#content{
-    padding-left: 20px;
+#content {
+    padding-left: 5px;
     display: flex;
     flex-direction: column;
     user-select: none;
     min-width: 400px;
 }
 
-
-#box{
-    padding: 10px;
-    width: 100%;
-    height: 100%;
-    border: 1px solid #2C3B4F;
-    border-radius: 5px;
-    background-color: #1F2938;
-    align-items: center;
-}
-
-#subtitle{
+#subtitle {
     font-family: "PT Sans Caption", Arial, Helvetica, sans-serif;
-    font-size: 22px;
+    font-size: 13.2px;
     line-height: 28px;
-    padding-top: 200px;
+    padding-top: 20px;
     padding-left: 7.5px;
     color: #D5D4D7;
     margin-bottom: 0;
 }
 
-#title{
+#title {
     font-family: "Baloo 2", Arial, Helvetica, sans-serif;
-    font-size: 40px;
+    font-size: 24px;
     line-height: 40px;
     letter-spacing: -0.025em;
     text-align: left;
-    margin-bottom:0;
+    margin-bottom: 0;
     margin-top: -20px;
 }
 
-#lock-icon{
-    width: 24px;
-    height: 24px;
+.title-1 {
+    color: #F0FFFF;
+    margin-bottom: 0;
+}
+
+.title-2 {
+    color: #FCD34D;
+    margin-top: 5px;
+}
+
+#setters {
+    display: flex;
+    max-width: 400px;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+
+#generate-password-button {
+    font-family: "Baloo 2", Arial, Helvetica, sans-serif;
+    padding-right: 1px;
+    height: 48px;
+    width: 168px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background-color: #FBBF24;
+    border: none;
+    border-radius: 10px;
+    color: #F0FFFF;
+    font-size: 13px;
+    margin-bottom: 30px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #E8A920;
+}
+
+#lock-icon {
+    width: 14.4px;
+    height: 14.4px;
     transition: transform 0.5s;
 }
 
-.title-1{
-    color: #F0FFFF;
-    margin-bottom:0;
-}
 
-.title-2{
-    color: #FCD34D;
-    margin-top:25px;
-}
-
-.locked{
+.locked {
     transform: rotate(360deg);
 }
 
-#passwords{
-    /* max-width: 380px; */
-    padding: 20;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 50px;
-    /* margin: 30px auto; */
-    text-align: center;
-    /* justify-content: center; */
-    max-width: 675px;
-}
-
-
-
-#passwords li {
-    display: flex;
-    align-items: center;
-    justify-content: center; 
-    width: 287.5px;
-    list-style: none;
-    font-family: "PT Sans Caption", Arial, Helvetica, sans-serif;
-    background-color: #FCD34D;
-    color: #F0FFFF;
-    font-size: 20px;
-    border-radius: 10px;
-    height: 60px;
-    width: 300px;
-}
-
-#passwords li:hover{
-    background-color: #FBBF24;
-    cursor: pointer;
-}
-
-hr.solid{
-    border: none;
-    border-top: 1px solid #2F3E52;
-    max-width: 675px;
-    margin-top: 20px;
-    margin-left: 20px;
-    height: 0;
-}
-
-#setters{
-    display: flex;
-    max-width: 450px;
-    justify-content: space-between; 
-    margin-top: 15px;
-    /* margin: 30px, auto; */
-}
-
-
 .password-length {
-    height: 64px;
-    width: 95px;
+    height: 48px;
+    width: 64px;
     border-radius: 10px;
     color: #FBBF24;
-    border: 1px solid #F0FFFF; 
+    border: 1px solid #F0FFFF;
     font-family: "PT Sans Caption", Arial, Helvetica, sans-serif;
     font-style: bold;
     font-weight: bold;
-    /* text-decoration: underline; remove underline? */
     text-align: center;
-    font-size: 15px;
-    margin-right: 39.5px;
-    -moz-appearance: textfield; /* for firefox? */
-    
+    font-size: 12px;
+    margin-right: 145px;
+    -moz-appearance: textfield;
 }
 
 ::placeholder {
     color: #FBBF24;
     opacity: 1;
-  }
+}
 
 .password-length::-webkit-outer-spin-button,
 .password-length::-webkit-inner-spin-button {
     -webkit-appearance: inner-spin-button;
     opacity: 1;
-    height: 20;
+    height: 15;
+    width: 5;
 }
 
-#help{
+#help {
     display: flex;
     flex-direction: row;
     max-width: 800px;
-    justify-content: start; 
-    /* margin: 30px, auto; */
+    justify-content: start;
 }
 
-#help-icon{
-    width: 12px;
-    height: 12px;
+#number-of-chars-subtitle {
+    padding-left: 188.75px;
+    margin-top: -25px;
+    font-family: "PT Sans Caption", Arial, Helvetica, sans-serif;
+    font-size: 6px;
+    color: #F0FFFF;
+}
+
+#help-icon {
+    width: 8px;
+    height: 8px;
     margin-top: -25px;
     margin-left: 2px;
     cursor: pointer;
@@ -187,30 +149,55 @@ hr.solid{
 .help-text {
     display: none;
     font-family: "PT Sans Caption", Arial, Helvetica, sans-serif;
-    font-size: 9px;
+    font-size: 7.25px;
     color: #F0FFFF;
     background-color: #333;
-    height:10px;
-    /* background-color: #273547; */
+    height: 10px;
     padding: 5px;
     border-radius: 5px;
     margin-top: -30px;
     margin-left: 5px;
 }
 
-#help-icon:hover + .help-text {
+#help-icon:hover+.help-text,
+#help-icon:focus+.help-text {
     display: block;
 }
 
-
-
-
-#number-of-chars-subtitle{
-    padding-left: 316.75px;
-    margin-top: -25px;
-    font-family: "PT Sans Caption", Arial, Helvetica, sans-serif;
-    font-size: 8px;
-    color: #F0FFFF; 
-    /* change to match the colour of hack-proof your accounts? */
+hr.solid {
+    border: none;
+    border-top: 1px solid #2F3E52;
+    max-width: 390px;
+    margin-top: 20px;
+    margin-left: 5px;
+    height: 0;
 }
 
+#passwords {
+    padding-left: 1px;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 12.5px;
+    max-width: 400px;
+}
+
+#passwords li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    background-color: #FCD34D;
+    color: #F0FFFF;
+    font-size: 12px;
+    border-radius: 10px;
+    height: 60px;
+    width: 180px;
+}
+
+#passwords li:hover {
+    background-color: #FBBF24;
+    cursor: pointer;
+}

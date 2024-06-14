@@ -5,6 +5,14 @@ const passwordLength = document.querySelector(".password-length");
 const helpText = document.querySelector(".help-text");
 let isAlertShown = false; // flag to track if the notif has been shown
 
+document.getElementById("help-icon").addEventListener("click", function() {
+    var helpText = document.querySelector(".help-text");
+    helpText.style.display = "block";
+    setTimeout(function() {
+        helpText.style.display = "none";
+    }, 3000);
+});
+
 passwordLength.addEventListener("input", function () {
     const passwordLengthValue = passwordLength.value;
     if (passwordLengthValue < 8 || passwordLengthValue > 20) {
@@ -99,33 +107,34 @@ function createPasswords(passwordLengthValue) {
 
 
 function generatePasswords(shouldGenerate) {
+    const passwordLengthValue = parseInt(passwordLength.value);
+    if (!passwordLengthValue || passwordLengthValue < 8 || passwordLengthValue > 20) {
+        helpText.style.display = "block"; // prompt user to enter number
+        return; 
+    }
     if (shouldGenerate) {
         passwordsArr.length = 0;
         passwordsElement.innerHTML = "";
-        const passwordLengthValue = parseInt(passwordLength.value);
-
-        if (passwordLengthValue >= 8 && passwordLengthValue <= 20) {
-            for (let i = 0; i < 4; i++) {
-                const newPassword = createPasswords(passwordLengthValue);
-                if (newPassword.length === passwordLengthValue) {
-                    passwordsArr.push(newPassword);
-                    const listItem = document.createElement("li");
-                    listItem.textContent = newPassword;
-                    listItem.addEventListener('click', function () {
-                        navigator.clipboard.writeText(newPassword)
-                            .then(() => {
-                                if (!isAlertShown) { // limit to one alert
-                                    alert("Password copied to clipboard!");
-                                    isAlertShown = true;
-                                }
-                            })
-                            .catch(err => console.error("Failed to copy password: ", err));
-                    });
-                    passwordsElement.appendChild(listItem);
-                }
-                else {
-                    console.error("Password generated doesn't match intended length", newPassword);
-                }
+        for (let i = 0; i < 4; i++) {
+            const newPassword = createPasswords(passwordLengthValue);
+            if (newPassword.length === passwordLengthValue) {
+                passwordsArr.push(newPassword);
+                const listItem = document.createElement("li");
+                listItem.textContent = newPassword;
+                listItem.addEventListener("click", function () {
+                    navigator.clipboard.writeText(newPassword)
+                        .then(() => {
+                            if (!isAlertShown) { // limit to one alert
+                                alert("Password copied to clipboard!");
+                                isAlertShown = true;
+                            }
+                        })
+                        .catch(err => console.error("Failed to copy password: ", err));
+                });
+                passwordsElement.appendChild(listItem);
+            }
+            else {
+                console.error("Password generated doesn't match intended length", newPassword);
             }
         }
     }

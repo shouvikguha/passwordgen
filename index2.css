@@ -1,0 +1,218 @@
+/* best for browser */
+
+body {
+    margin: 0;
+    padding: 0;
+    min-width: 675px;
+}
+
+button {
+    font-family: "Baloo 2", Arial, Helvetica, sans-serif;
+    padding-right: 1px;
+    height: 64px;
+    width: 275px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #FBBF24;
+    border: none;
+    border-radius: 10px;
+    /* cursor: pointer; */
+    color: #F0FFFF;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #E8A920;
+}
+
+#content {
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+    min-width: 400px;
+}
+
+
+#box {
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #2C3B4F;
+    border-radius: 5px;
+    background-color: #1F2938;
+    align-items: center;
+}
+
+#subtitle {
+    font-family: "PT Sans Caption", Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    line-height: 28px;
+    padding-top: 200px;
+    padding-left: 7.5px;
+    color: #D5D4D7;
+    margin-bottom: 0;
+}
+
+#title {
+    font-family: "Baloo 2", Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    line-height: 40px;
+    letter-spacing: -0.025em;
+    text-align: left;
+    margin-bottom: 0;
+    margin-top: -20px;
+}
+
+#lock-icon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.5s;
+}
+
+.title-1 {
+    color: #F0FFFF;
+    margin-bottom: 0;
+}
+
+.title-2 {
+    color: #FCD34D;
+    margin-top: 25px;
+}
+
+.locked {
+    transform: rotate(360deg);
+}
+
+#passwords {
+    /* max-width: 380px; */
+    padding: 20;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 50px;
+    /* margin: 30px auto; */
+    text-align: center;
+    /* justify-content: center; */
+    max-width: 675px;
+}
+
+
+
+#passwords li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 287.5px;
+    list-style: none;
+    font-family: "PT Sans Caption", Arial, Helvetica, sans-serif;
+    background-color: #FCD34D;
+    color: #F0FFFF;
+    font-size: 20px;
+    border-radius: 10px;
+    height: 60px;
+    width: 300px;
+}
+
+#passwords li:hover {
+    background-color: #FBBF24;
+    cursor: pointer;
+}
+
+hr.solid {
+    border: none;
+    border-top: 1px solid #2F3E52;
+    max-width: 675px;
+    margin-top: 20px;
+    margin-left: 20px;
+    height: 0;
+}
+
+#setters {
+    display: flex;
+    max-width: 450px;
+    justify-content: space-between;
+    margin-top: 15px;
+    /* margin: 30px, auto; */
+}
+
+
+.password-length {
+    height: 64px;
+    width: 95px;
+    border-radius: 10px;
+    color: #FBBF24;
+    border: 1px solid #F0FFFF;
+    font-family: "PT Sans Caption", Arial, Helvetica, sans-serif;
+    font-style: bold;
+    font-weight: bold;
+    /* text-decoration: underline; remove underline? */
+    text-align: center;
+    font-size: 15px;
+    margin-right: 39.5px;
+    -moz-appearance: textfield;
+    /* for firefox? */
+
+}
+
+::placeholder {
+    color: #FBBF24;
+    opacity: 1;
+}
+
+.password-length::-webkit-outer-spin-button,
+.password-length::-webkit-inner-spin-button {
+    -webkit-appearance: inner-spin-button;
+    opacity: 1;
+    height: 20;
+}
+
+#help {
+    display: flex;
+    flex-direction: row;
+    max-width: 800px;
+    justify-content: start;
+    /* margin: 30px, auto; */
+}
+
+#help-icon {
+    width: 12px;
+    height: 12px;
+    margin-top: -25px;
+    margin-left: 2px;
+    cursor: pointer;
+}
+
+.help-text {
+    display: none;
+    font-family: "PT Sans Caption", Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    color: #F0FFFF;
+    background-color: #333;
+    height: 10px;
+    /* background-color: #273547; */
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: -30px;
+    margin-left: 5px;
+}
+
+#help-icon:hover+.help-text {
+    display: block;
+}
+
+
+
+
+#number-of-chars-subtitle {
+    padding-left: 316.75px;
+    margin-top: -25px;
+    font-family: "PT Sans Caption", Arial, Helvetica, sans-serif;
+    font-size: 8px;
+    color: #F0FFFF;
+    /* change to match the colour of hack-proof your accounts? */
+}
