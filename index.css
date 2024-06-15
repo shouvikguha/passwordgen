@@ -290,5 +290,5 @@ hr.solid {
     right: 5;
     font-size: 6px;
     color: var(--author-color);
-    user-select: none;
+    user-select: none; 
 }

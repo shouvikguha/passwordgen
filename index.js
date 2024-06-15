@@ -134,7 +134,7 @@ function generatePasswords(shouldGenerate) {
                 console.error("Password generated doesn't match intended length", newPassword);
             }
         }
-    }
+    } 
     else {
         passwordsElement.innerHTML = "";
         isAlertShown = false;
