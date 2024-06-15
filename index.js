@@ -51,7 +51,7 @@ function createPasswords(passwordLengthValue) {
     const allLetters = upperCaseLetters.concat(lowerCaseLetters);
     const specialcharsSubDashPeriod = specialChars.filter(char => char !== "." && char !== "-");
 
-    // dash, period, shouldn"t be first; https://www.ibm.com/docs/en/baw/20.x?topic=security-characters-that-are-valid-user-ids-passwords
+    // dash, period, shouldn't be first; https://www.ibm.com/docs/en/baw/20.x?topic=security-characters-that-are-valid-user-ids-passwords
     // logic inspired by https://rublon.com/blog/nist-password-guidelines/
 
     function getRandomElement(array) {
