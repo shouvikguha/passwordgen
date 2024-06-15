@@ -1,8 +1,90 @@
+:root {
+    --background-color: #1F2938;
+    --text-color: #F0FFFF;
+    --sub-text-color: #D5D4D7;
+    --titl-text-passwords-color: #FCD34D;
+    --help-text-color: #333;
+    --button-background: #FBBF24;
+    --button-hover-background: #E8A920;
+}
+
+.light-mode {
+    --background-color: #FFF1F2;
+    --text-color: #2B283B;
+    --sub-text-color: #C0BFBF;
+    --titl-text-passwords-color: #FCA9B0;
+    --help-text-color: #E6E6E6;
+    --button-background: #FB7185;
+    --button-hover-background: #E85D72;
+}
+
+.theme-switch-wrapper {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.theme-switch {
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+    margin: 10px;
+    position: relative;
+}
+
+.theme-switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 12px;
+    width: 12px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--background-color);
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background-color: var(--sub-text-color);
+}
+
+input:checked+.slider:before {
+    transform: translateX(14px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
 body {
     margin: 0;
     padding: 0;
     min-width: 400px;
     min-height: 600px;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
 #box {
@@ -11,7 +93,7 @@ body {
     height: 100%;
     border: 1px solid #2C3B4F;
     border-radius: 1px;
-    background-color: #1F2938;
+    background-color: var(--background-color);
     align-items: center;
     max-width: 400px;
 }
@@ -29,8 +111,8 @@ body {
     font-size: 13.2px;
     line-height: 28px;
     padding-top: 20px;
-    padding-left: 7.5px;
-    color: #D5D4D7;
+    padding-left: 5.5px;
+    color: var(--sub-text-color);
     margin-bottom: 0;
 }
 
@@ -45,12 +127,12 @@ body {
 }
 
 .title-1 {
-    color: #F0FFFF;
+    color: var(--text-color);
     margin-bottom: 0;
 }
 
 .title-2 {
-    color: #FCD34D;
+    color: var(--titl-text-passwords-color);
     margin-top: 5px;
 }
 
@@ -61,7 +143,6 @@ body {
     margin-top: 15px;
 }
 
-
 #generate-password-button {
     font-family: "Baloo 2", Arial, Helvetica, sans-serif;
     padding-right: 1px;
@@ -71,7 +152,7 @@ body {
     align-items: center;
     justify-content: center;
     gap: 6px;
-    background-color: #FBBF24;
+    background-color: var(--button-background);
     border: none;
     border-radius: 10px;
     color: #F0FFFF;
@@ -79,9 +160,9 @@ body {
     margin-bottom: 30px;
 }
 
-button:hover {
+#generate-password-button:hover {
     cursor: pointer;
-    background-color: #E8A920;
+    background-color: var(--button-hover-background);
 }
 
 #lock-icon {
@@ -89,7 +170,6 @@ button:hover {
     height: 14.4px;
     transition: transform 0.5s;
 }
-
 
 .locked {
     transform: rotate(360deg);
@@ -99,8 +179,8 @@ button:hover {
     height: 48px;
     width: 64px;
     border-radius: 10px;
-    color: #FBBF24;
-    border: 1px solid #F0FFFF;
+    color: var(--button-background);
+    border: 1px solid var(--text-color);
     font-family: "PT Sans Caption", Arial, Helvetica, sans-serif;
     font-style: bold;
     font-weight: bold;
@@ -111,7 +191,7 @@ button:hover {
 }
 
 ::placeholder {
-    color: #FBBF24;
+    color: var(--button-background);
     opacity: 1;
 }
 
@@ -135,7 +215,7 @@ button:hover {
     margin-top: -25px;
     font-family: "PT Sans Caption", Arial, Helvetica, sans-serif;
     font-size: 6px;
-    color: #F0FFFF;
+    color: var(--text-color);
 }
 
 #help-icon {
@@ -150,8 +230,8 @@ button:hover {
     display: none;
     font-family: "PT Sans Caption", Arial, Helvetica, sans-serif;
     font-size: 7.25px;
-    color: #F0FFFF;
-    background-color: #333;
+    color: var(--text-color);
+    background-color: var(--help-text-color);
     height: 10px;
     padding: 5px;
     border-radius: 5px;
@@ -189,7 +269,7 @@ hr.solid {
     align-items: center;
     justify-content: center;
     list-style: none;
-    background-color: #FCD34D;
+    background-color: var(--button-background);
     color: #F0FFFF;
     font-size: 12px;
     border-radius: 10px;
@@ -198,6 +278,6 @@ hr.solid {
 }
 
 #passwords li:hover {
-    background-color: #FBBF24;
+    background-color: var(--button-hover-background);
     cursor: pointer;
 }

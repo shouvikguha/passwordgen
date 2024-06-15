@@ -5,10 +5,16 @@ const passwordLength = document.querySelector(".password-length");
 const helpText = document.querySelector(".help-text");
 let isAlertShown = false; // flag to track if the notif has been shown
 
-document.getElementById("help-icon").addEventListener("click", function() {
+document.getElementById("checkbox").addEventListener("change", function () {
+    document.body.classList.toggle("light-mode", this.checked);
+    let helpIcon = document.getElementById('help-icon');
+    this.checked ? helpIcon.src = "./assets/question-mark-icon(b).png" : helpIcon.src = "./assets/question-mark-icon.png";
+});
+
+document.getElementById("help-icon").addEventListener("click", function () {
     var helpText = document.querySelector(".help-text");
     helpText.style.display = "block";
-    setTimeout(function() {
+    setTimeout(function () {
         helpText.style.display = "none";
     }, 3000);
 });
@@ -22,7 +28,6 @@ passwordLength.addEventListener("input", function () {
         helpText.style.display = "none";
     }
 });
-
 
 genpasswordButton.addEventListener("click", function () {
     var icon = document.getElementById("lock-icon");
@@ -39,7 +44,6 @@ genpasswordButton.addEventListener("click", function () {
 });
 
 function createPasswords(passwordLengthValue) {
-
     const upperCaseLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
     const lowerCaseLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
     const specialChars = ["@", "!", "#", "$", "%", "^", "&", "*", "(", ")", "=", "+", ":", ";", "~", "`", "[", "]", "?", ".", "-", "<", ">"];
@@ -70,7 +74,6 @@ function createPasswords(passwordLengthValue) {
     let numberCount = 0;
     password.push(getRandomElement(upperCaseLetters));
     password.push(getRandomElement(lowerCaseLetters));
-
     for (let i = 2; i < passwordLengthValue; i++) {
         let char;
         if (specialCharCount < maxSpecialChars) {
@@ -86,9 +89,7 @@ function createPasswords(passwordLengthValue) {
         }
         password.push(char);
     }
-
     shuffleArray(password);
-
     if (password[0] === "." || password[0] === "-") {
         for (let i = 1; i < passwordLengthValue; i++) {
             if (specialcharsSubDashPeriod.includes(password[i])) {
@@ -99,18 +100,14 @@ function createPasswords(passwordLengthValue) {
             }
         }
     }
-
     return password.join("");
 }
-
-
-
 
 function generatePasswords(shouldGenerate) {
     const passwordLengthValue = parseInt(passwordLength.value);
     if (!passwordLengthValue || passwordLengthValue < 8 || passwordLengthValue > 20) {
         helpText.style.display = "block"; // prompt user to enter number
-        return; 
+        return;
     }
     if (shouldGenerate) {
         passwordsArr.length = 0;
