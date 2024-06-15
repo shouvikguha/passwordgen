@@ -6,6 +6,7 @@
     --help-text-color: #333;
     --button-background: #FBBF24;
     --button-hover-background: #E8A920;
+    --author-color: #D5D4D7;
 }
 
 .light-mode {
@@ -16,6 +17,7 @@
     --help-text-color: #E6E6E6;
     --button-background: #FB7185;
     --button-hover-background: #E85D72;
+    --author-color: #333;
 }
 
 .theme-switch-wrapper {
@@ -269,7 +271,7 @@ hr.solid {
     align-items: center;
     justify-content: center;
     list-style: none;
-    background-color: var(--button-background);
+    background-color: var(--titl-text-passwords-color);
     color: #F0FFFF;
     font-size: 12px;
     border-radius: 10px;
@@ -278,6 +280,15 @@ hr.solid {
 }
 
 #passwords li:hover {
-    background-color: var(--button-hover-background);
+    background-color: var(--button-background);
     cursor: pointer;
+}
+
+#author{
+    position: fixed;
+    bottom: 5;
+    right: 5;
+    font-size: 6px;
+    color: var(--author-color);
+    user-select: none;
 }

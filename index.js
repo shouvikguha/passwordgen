@@ -7,7 +7,7 @@ let isAlertShown = false; // flag to track if the notif has been shown
 
 document.getElementById("checkbox").addEventListener("change", function () {
     document.body.classList.toggle("light-mode", this.checked);
-    let helpIcon = document.getElementById('help-icon');
+    let helpIcon = document.getElementById("help-icon");
     this.checked ? helpIcon.src = "./assets/question-mark-icon(b).png" : helpIcon.src = "./assets/question-mark-icon.png";
 });
 
